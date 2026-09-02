@@ -1,0 +1,799 @@
+:root {
+  --purple: #6c2bd9;
+  --purple-dark: #4c1d95;
+  --purple-light: #ede9fe;
+
+  --coral: #ff5c5c;
+  --coral-dark: #e54848;
+  --coral-light: #fff0f0;
+
+  --orange: #ff9f43;
+  --orange-light: #fff4e5;
+
+  --blue: #3b82f6;
+  --blue-light: #eff6ff;
+
+  --green: #16a34a;
+  --green-light: #ecfdf3;
+
+  --cream: #fffaf5;
+  --text: #211a2b;
+  --text-light: #756d7f;
+  --border: #eee7f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--cream);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ================================
+   APP
+================================ */
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(108, 43, 217, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 0% 30%,
+      rgba(255, 92, 92, 0.08),
+      transparent 25%
+    ),
+    var(--cream);
+
+  color: var(--text);
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 7%;
+
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--border);
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  backdrop-filter: blur(12px);
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  background: linear-gradient(
+    135deg,
+    var(--purple),
+    var(--coral)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  margin: 4px 0 0;
+
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* ================================
+   ROLE SWITCHER
+================================ */
+
+.role-switcher {
+  display: flex;
+  gap: 8px;
+
+  padding: 5px;
+
+  background: #f5f0fa;
+  border-radius: 14px;
+}
+
+.role-switcher button {
+  width: auto;
+
+  padding: 9px 16px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: transparent;
+  color: var(--text-light);
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.role-switcher button:hover {
+  background: white;
+  color: var(--purple);
+  transform: translateY(-1px);
+}
+
+.role-switcher button.active-role {
+  background: linear-gradient(
+    135deg,
+    var(--purple),
+    #8b5cf6
+  );
+
+  color: white;
+
+  box-shadow: 0 5px 14px rgba(108, 43, 217, 0.25);
+}
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+  width: min(760px, 90%);
+
+  margin: 55px auto 80px;
+}
+
+/* ================================
+   WELCOME
+================================ */
+
+.welcome {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  margin: 0 0 10px;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  background: var(--purple-light);
+  color: var(--purple);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.welcome h2 {
+  margin: 0 0 10px;
+
+  font-size: clamp(28px, 5vw, 38px);
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+}
+
+.welcome p {
+  margin: 0;
+
+  color: var(--text-light);
+
+  line-height: 1.7;
+}
+
+/* ================================
+   CARDS
+================================ */
+
+.card {
+  padding: 32px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 40px rgba(76, 29, 149, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 20px 45px rgba(76, 29, 149, 0.10);
+}
+
+/* ================================
+   FORM
+================================ */
+
+.form-group {
+  margin-bottom: 21px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  padding: 14px 15px;
+
+  border: 1.5px solid #ddd4e5;
+  border-radius: 11px;
+
+  background: #fff;
+
+  color: var(--text);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa1b0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+
+  border-color: var(--purple);
+
+  box-shadow:
+    0 0 0 4px rgba(108, 43, 217, 0.10);
+}
+
+.form-group textarea {
+  min-height: 110px;
+
+  resize: vertical;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+button {
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: linear-gradient(
+    135deg,
+    var(--purple),
+    #8b5cf6
+  );
+
+  color: white;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(
+    135deg,
+    var(--purple-dark),
+    var(--purple)
+  );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(108, 43, 217, 0.25);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ================================
+   SUCCESS MESSAGE
+================================ */
+
+.message {
+  margin-top: 20px;
+
+  padding: 13px 16px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 11px;
+
+  background: var(--green-light);
+  color: var(--green);
+
+  font-weight: 600;
+}
+
+/* ================================
+   DELIVERY LIST
+================================ */
+
+.delivery-list {
+  display: grid;
+
+  gap: 20px;
+}
+
+/* ================================
+   DELIVERY CARD
+================================ */
+
+.delivery-card {
+  padding: 25px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(76, 29, 149, 0.06);
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* colorful accent line */
+
+.delivery-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    var(--purple),
+    var(--coral),
+    var(--orange)
+  );
+}
+
+.delivery-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 35px rgba(76, 29, 149, 0.10);
+}
+
+/* ================================
+   DELIVERY HEADER
+================================ */
+
+.delivery-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+}
+
+.delivery-header h3 {
+  margin: 0 0 6px;
+
+  font-size: 20px;
+}
+
+.delivery-header p {
+  margin: 0;
+
+  color: var(--text-light);
+}
+
+/* ================================
+   STATUS BADGES
+================================ */
+
+.status {
+  padding: 7px 13px;
+
+  border-radius: 30px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  letter-spacing: 0.4px;
+}
+
+.status.open {
+  background: var(--orange-light);
+  color: #c76b00;
+}
+
+.status.assigned {
+  background: var(--purple-light);
+  color: var(--purple);
+}
+
+.status.picked_up {
+  background: var(--blue-light);
+  color: #2563eb;
+}
+
+.status.delivered {
+  background: var(--green-light);
+  color: var(--green);
+}
+
+/* ================================
+   DELIVERY DETAILS
+================================ */
+
+.delivery-details {
+  margin: 21px 0;
+
+  padding: 15px;
+
+  background: #fcf9ff;
+
+  border-radius: 12px;
+
+  border-left: 3px solid var(--coral);
+}
+
+.delivery-details p {
+  margin: 8px 0;
+
+  color: var(--text-light);
+
+  font-size: 14px;
+}
+
+.delivery-details strong {
+  color: var(--text);
+}
+
+/* ================================
+   SELECT
+================================ */
+
+.delivery-card select,
+.rider-selector select {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1.5px solid #ddd4e5;
+  border-radius: 11px;
+
+  background: white;
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.delivery-card select:focus,
+.rider-selector select:focus {
+  outline: none;
+
+  border-color: var(--purple);
+
+  box-shadow:
+    0 0 0 4px rgba(108, 43, 217, 0.10);
+}
+
+/* ================================
+   ASSIGNED RIDER
+================================ */
+
+.assigned-rider {
+  margin: 0;
+
+  padding: 11px 14px;
+
+  border-radius: 10px;
+
+  background: var(--purple-light);
+
+  color: var(--purple);
+
+  font-size: 14px;
+}
+
+.assigned-rider strong {
+  color: var(--purple-dark);
+}
+
+/* ================================
+   RIDER SELECTOR
+================================ */
+
+.rider-selector {
+  margin-bottom: 22px;
+}
+
+.rider-selector label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ================================
+   COMPLETED
+================================ */
+
+.completed {
+  margin: 0;
+
+  padding: 12px 15px;
+
+  border-radius: 11px;
+
+  background: var(--green-light);
+
+  color: var(--green);
+
+  font-weight: 800;
+
+  text-align: center;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 700px) {
+  .header {
+    padding: 18px 5%;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .role-switcher {
+    width: 100%;
+  }
+
+  .role-switcher button {
+    flex: 1;
+
+    padding: 10px 8px;
+
+    font-size: 13px;
+  }
+
+  .main-content {
+    width: min(92%, 760px);
+
+    margin: 35px auto 60px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .delivery-card {
+    padding: 21px;
+  }
+
+  .delivery-header {
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .status {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .welcome h2 {
+    font-size: 29px;
+  }
+
+  .role-switcher button {
+    font-size: 12px;
+
+    padding: 9px 5px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+}
+
+/* ================================
+   DELIVERY TIMELINE
+================================ */
+
+.timeline {
+  margin: 22px 0;
+
+  padding: 18px;
+
+  background: #faf7ff;
+
+  border-radius: 14px;
+
+  border: 1px solid #eee7f3;
+}
+
+.timeline-title {
+  margin: 0 0 16px;
+
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.timeline-step {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  position: relative;
+
+  min-height: 42px;
+
+  color: #aaa1b0;
+}
+
+.timeline-step:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 14px;
+  top: 30px;
+
+  width: 2px;
+  height: 22px;
+
+  background: #e5dff0;
+}
+
+.timeline-marker {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 29px;
+  height: 29px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #eee7f3;
+
+  color: #9b91a5;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  z-index: 1;
+}
+
+.timeline-content {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.completed-step {
+  color: var(--purple);
+}
+
+.completed-step .timeline-marker {
+  background: var(--purple);
+
+  color: white;
+
+  box-shadow:
+    0 4px 10px rgba(108, 43, 217, 0.20);
+}
+
+.completed-step:not(:last-child)::after {
+  background: var(--purple);
+}
+
+/* ================================
+   RETAILER TRACKING
+================================ */
+
+.retailer-deliveries {
+  margin-top: 55px;
+}
+
+.tracking-heading {
+  margin-bottom: 25px;
+}
+
+.tracking-heading h2 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+}
+
+.tracking-heading p:last-child {
+  margin: 0;
+
+  color: var(--text-light);
+
+  line-height: 1.6;
+}

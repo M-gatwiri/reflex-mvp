@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://reflex-mvp-1.onrender.com/api";
 
 function DeliveryTimeline({ status }) {
   const steps = [
